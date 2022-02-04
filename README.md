@@ -2,7 +2,7 @@
 
 <sup>**WARNING!** This project considered as a "Homework" and "Challange" work. If someone of you already know that there is a plugin that works in similar way, please inform in "Issues" section. But even if it is simillar, this one will continue to be created... so help will be appreciated!</sup>
 ___
-This plugin is for having all [VanillaTweaks](https://google.com/search?q=VanillaTweaks) features inside one plugin that can be `Enabled` or `Disabled` by single command from op.
+This plugin allows having all [VanillaTweaks](https://google.com/search?q=VanillaTweaks) features inside one plugin that can be `Enabled` or `Disabled` by single command from op.
 
 There is a lot of things created by Hermits itself or with some help of CC (Content Creators). But some server hostings didnt allow to put datapacks inside of servers (Athernos as example). To solve this issue desided to create a plugin that works similar to VanillaTweaks.
 
