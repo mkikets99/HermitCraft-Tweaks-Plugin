@@ -12,7 +12,7 @@ There is a lot of things created by Hermits itself or with some help of CC (Cont
 ### VanillaTweaks Datapacks
 
 |Feature Number| Status |Section| Datapack Name  | Datapack Info                   | Available From Version  | Last Updated| Wiki |
-|---|--------|------|----------------|---------------------------------|---------------|-----|
+|---|--------|------|----------------|---------------------------------|---------------|-----|---|
 |1| Not Done |Survival| Armor Statues | Adds a unique Book that allows you to alter the properties of armor stands in survival | - | - |
 |2| Not Done |Survival| Unlock All Recipes | Automatically unlock all recipes as soon as you start playing | - | - |
 |3| Not Done |Survival| Fast Leaf Decay | Leaves decay much faster when trees are mined in survival mode | - | - |
@@ -77,8 +77,8 @@ All Datapacks is from Vanilla Tweaks website. Some of the tweaks will be changed
   
 ### VanilaTweaks Crafting Tweaks
 
-|Feature Number| Status |Section| Datapack Name  | Datapack Info                   | Available From Version  | Last Updated| 
-|---|--------|------|----------------|---------------------------------|---------------|-----|
+|Feature Number| Status |Section| Datapack Name  | Datapack Info                   | Available From Version  | Last Updated| Wiki |
+|---|--------|------|----------------|---------------------------------|---------------|-----|---|
 |53| Not Done | Quality of Life | Back to Blocks | Allows to craft full blocks from stairs and slabs | - | - |
 |54| Not Done | Quality of Life | Double Slabs | Allows to craft 2 slabs from a single block | - | - |
 |55| Not Done | Quality of Life | Dropper to dispenser | Allows you to conver a Dropper to a Dispencer using a Bow, or by using String and sticks | - | - |
