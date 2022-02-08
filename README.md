@@ -11,7 +11,7 @@ There is a lot of things created by Hermits itself or with some help of CC (Cont
 ## The Great List of Features 
 ### VanillaTweaks Datapacks
 
-|Feature Number| Status |Section| Datapack Name  | Datapack Info                   | Available From Version  | Last Updated| 
+|Feature Number| Status |Section| Datapack Name  | Datapack Info                   | Available From Version  | Last Updated| Wiki |
 |---|--------|------|----------------|---------------------------------|---------------|-----|
 |1| Not Done |Survival| Armor Statues | Adds a unique Book that allows you to alter the properties of armor stands in survival | - | - |
 |2| Not Done |Survival| Unlock All Recipes | Automatically unlock all recipes as soon as you start playing | - | - |
