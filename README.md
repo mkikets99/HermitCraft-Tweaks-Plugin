@@ -1,4 +1,4 @@
-# HermitCraft-Tweaks-Plugin
+# HermitCraft Tweaks Plugin
 
 <sup>**WARNING!** This project considered as a "Homework" and "Challange" work. If someone of you already know that there is a plugin that works in similar way, please inform in "Issues" section. But even if it is simillar, this one will continue to be created... so help will be appreciated!</sup>
 ___
