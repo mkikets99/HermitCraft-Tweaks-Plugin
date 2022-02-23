@@ -15,7 +15,7 @@ There is a lot of things created by Hermits itself or with some help of CC (Cont
 |---|--------|------|----------------|---------------------------------|---------------|-----|---|
 |1| Not Done |Survival| Armor Statues | Adds a unique Book that allows you to alter the properties of armor stands in survival | - | - |
 |2| Not Done |Survival| Unlock All Recipes | Automatically unlock all recipes as soon as you start playing | - | - |
-|3| Not Done |Survival| Fast Leaf Decay | Leaves decay much faster when trees are mined in survival mode | - | - |
+|3| Done |Survival| Fast Leaf Decay | Leaves decay much faster when trees are mined in survival mode | 0.0.1-SNAPSHOT | 23.03.2021 | - |
 |4| Not Done |Survival| AFK Display | Greys out a player's name that is not moving for 5 minutes | - | - |
 |5| Not Done |Survival| Multiplayer Sleep | Not all players in the overworld must sleep to skip the night and the rain. (ads Smooth transition to next day) | - | - |
 |6| Not Done |Survival| Graves | When a player dies, a grave is made at their location containing all theit items. Right-click grave to receive your items, and crouch to make it so only you can pick them up | - | - |
