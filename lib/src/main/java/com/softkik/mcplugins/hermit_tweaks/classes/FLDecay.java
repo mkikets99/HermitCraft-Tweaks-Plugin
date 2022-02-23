@@ -31,8 +31,8 @@ import revxrsal.commands.exception.CommandExceptionAdapter.Ignore;
 public class FLDecay implements Listener{
 
 	private boolean tempSwitch = true;
-	private int tempDelay = true;
-	private int tempTime = true;
+	private int tempDelay = 1;
+	private int tempTime = 7;
 	
 	public FLDecay() {
 		tempSwitch = SettingsLoader.getBoolean("hctp-ftdecay-enabled", false);
