@@ -198,9 +198,9 @@ public class FLDecay implements Listener{
 		return;
 	}
 	@Subcommand("disable")
-	@Description("Fast Leaf Decay - Delay time config")
-	@CommandPermission("hctp.fldecay.delayTime")
-	@Usage("hctp fldecay delayTime [<time>]")
+	@Description("Fast Leaf Decay - Disable this part")
+	@CommandPermission("hctp.fldecay.disable")
+	@Usage("hctp fldecay disable")
 	public void disable(Player sender, @Switch("temporary") boolean temporary) {
 		if(SettingsLoader.PersorRequiresOP(sender)) {
 			this.tempSwitch = false;
@@ -212,9 +212,9 @@ public class FLDecay implements Listener{
 		return;
 	}
 	@Subcommand("enable")
-	@Description("Fast Leaf Decay - Delay time config")
-	@CommandPermission("hctp.fldecay.delayTime")
-	@Usage("hctp fldecay delayTime [<time>]")
+	@Description("Fast Leaf Decay - Enable this part")
+	@CommandPermission("hctp.fldecay.enable")
+	@Usage("hctp fldecay enable")
 	public void enable(Player sender, @Switch("temporary") boolean temporary) {
 		if(SettingsLoader.PersorRequiresOP(sender)) {
 			this.tempSwitch = true;
