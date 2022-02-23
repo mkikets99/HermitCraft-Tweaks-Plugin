@@ -20,6 +20,7 @@ repositories {
   jcenter() 
   mavenCentral()
    protocolLib()
+   maven { url = 'https://jitpack.io' }
   maven {
     url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
 
@@ -44,15 +45,32 @@ repositories {
   // mavenLocal() // This is needed for CraftBukkit and Spigot.
 }
 
+configurations {
+    // configuration that holds jars to include in the jar
+    extraLibs
+}
 dependencies {
   testCompile 'junit:junit:4.12'
   compile 'junit:junit:4.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
   // Pick only one of these and read the comment in the repositories block.
   implementation 'org.spigotmc:spigot-api:1.13-R0.1-SNAPSHOT' // The Spigot API with no shadowing. Requires the OSS repo.
-  //compileOnly 'org.spigotmc:spigot:1.13-R0.1-SNAPSHOT' // The full Spigot server with no shadowing. Requires mavenLocal.
+  //compileOnly 'org.spigotmc:spigot:1.13-R0.1-SNAPSHOT' // The full Spigot server with no shadowing. Requires mavenLocal.// For the common module
+  compile 'com.github.Revxrsal.Lamp:common:2.9.4'
+  compile 'com.github.Revxrsal.Lamp:bukkit:2.9.4'
+  extraLibs group: 'com.github.Revxrsal.Lamp', name: 'common', version: '2.9.4'
+  extraLibs group: 'com.github.Revxrsal.Lamp', name: 'bukkit', version: '2.9.4'
+  configurations.compile.extendsFrom(configurations.extraLibs)
+}
+
+compileJava {
+    options.compilerArgs += ["-parameters"]
+    options.fork = true
+    options.forkOptions.executable = 'javac'
 }
 
 spigot {
+   name = 'HCTP'
    main = 'com.softkik.mcplugins.hermit_tweaks.MainLoader'
    authors = ['Mykola Kikets']
    depends = []
@@ -62,4 +80,10 @@ spigot {
    }
    permissions {
    }
+}
+
+jar {
+  from {
+    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+  }
 }
