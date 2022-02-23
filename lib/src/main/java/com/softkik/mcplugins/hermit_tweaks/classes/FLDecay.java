@@ -29,11 +29,15 @@ import revxrsal.commands.exception.CommandExceptionAdapter.Ignore;
 
 @Command({"hctp fldecay"})
 public class FLDecay implements Listener{
-	
+
 	private boolean tempSwitch = true;
+	private int tempDelay = true;
+	private int tempTime = true;
 	
 	public FLDecay() {
 		tempSwitch = SettingsLoader.getBoolean("hctp-ftdecay-enabled", false);
+		tempDelay = SettingsLoader.getInt("hctp-ftdecay-delay", 1);
+		tempTime = SettingsLoader.getInt("hctp-ftdecay-time", 7);
 	}
 
 	@Ignore
@@ -114,7 +118,7 @@ public class FLDecay implements Listener{
 						public void run() {
 							FLDecay.this.tryToBreak(e.getBlock(),bbc);
 						}
-					}.runTaskLater(MainLoader.instance, 20L*SettingsLoader.getInt("hctp-fldecay-delay", 1));
+					}.runTaskLater(MainLoader.instance, 20L*tempDelay);
 				}
 			}
 		}
@@ -156,7 +160,7 @@ public class FLDecay implements Listener{
 						public void run() {
 							fbb.breakNaturally();
 						}
-					}.runTaskLater(MainLoader.instance,(long)(new Random().nextInt(20*SettingsLoader.getInt("hctp-fldecay-time", 7))));
+					}.runTaskLater(MainLoader.instance,(long)(new Random().nextInt(20*tempTime)));
 				} catch (IllegalArgumentException e) {
 					e.printStackTrace();
 				} catch (IllegalStateException e) {
@@ -170,12 +174,14 @@ public class FLDecay implements Listener{
 	@Description("Fast Leaf Decay - Decay time config")
 	@CommandPermission("hctp.fldecay.decayTime")
 	@Usage("hctp fldecay decayTime [<time>]")
-	public void DecayTime(Player sender, @Range(min=1,max=200) Integer time) {
+	public void DecayTime(Player sender, @Range(min=1,max=200) Integer time, @Switch("temporary") boolean temporary) {
 		if(SettingsLoader.PersorRequiresOP(sender)) {
 			if(time==null) {
 				sender.sendMessage("Amount must be set");
 			}else {
-				SettingsLoader.setData("hctp-fldecay-time", time);
+				tempTime = time;
+				if(!temporary)
+					SettingsLoader.setData("hctp-fldecay-time", time);
 				sender.sendMessage("Settled");
 			}
 		}
@@ -186,12 +192,14 @@ public class FLDecay implements Listener{
 	@Description("Fast Leaf Decay - Delay time config")
 	@CommandPermission("hctp.fldecay.delayTime")
 	@Usage("hctp fldecay delayTime [<time>]")
-	public void DelayTime(Player sender, @Range(min=1,max=200) Integer time) {
+	public void DelayTime(Player sender, @Range(min=1,max=200) Integer time, @Switch("temporary") boolean temporary) {
 		if(SettingsLoader.PersorRequiresOP(sender)) {
 			if(time==null) {
 				sender.sendMessage("Amount must be set");
 			}else {
-				SettingsLoader.setData("hctp-fldecay-delay", time);
+				tempDelay = time;
+				if(!temporary)
+					SettingsLoader.setData("hctp-fldecay-delay", time);
 				sender.sendMessage("Settled");
 			}
 		}
@@ -221,6 +229,19 @@ public class FLDecay implements Listener{
 			if(!temporary){
 				SettingsLoader.setData("hctp-fldecay-enabled", true);
 			}
+			sender.sendMessage("Settled");
+		}
+		return;
+	}
+	@Subcommand("restore")
+	@Description("Fast Leaf Decay - Restore All Temp Changes")
+	@CommandPermission("hctp.fldecay.restore")
+	@Usage("hctp fldecay restore")
+	public void restore(Player sender) {
+		if(SettingsLoader.PersorRequiresOP(sender)) {
+			tempSwitch = SettingsLoader.getBoolean("hctp-ftdecay-enabled", false);
+			tempDelay = SettingsLoader.getInt("hctp-ftdecay-delay", 1);
+			tempTime = SettingsLoader.getInt("hctp-ftdecay-time", 7);
 			sender.sendMessage("Settled");
 		}
 		return;
